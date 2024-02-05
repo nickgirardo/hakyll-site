@@ -2,15 +2,14 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 import Hakyll
-
-import Debug.Trace (trace)
+import Data.List ((\\))
 
 --------------------------------------------------------------------------------
 
 main :: IO ()
 main = hakyll $ do
     match "extern/**" $ do
-        route idRoute
+        route $ customRoute ((\\ "extern/") . toFilePath)
         compile copyFileCompiler
 
     match "images/*" $ do

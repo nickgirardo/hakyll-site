@@ -11,6 +11,8 @@ html {
 }
 
 body {
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 1.6rem;
   color: var(--color-text);
   background-color: var(--color-main-bg);
@@ -26,10 +28,8 @@ nav {
 
 nav a {
   font-size: 1.8rem;
-  font-weight: bold;
   color: var(--color-text);
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 /* TODO footer styles */
@@ -56,7 +56,6 @@ article .header {
 }
 
 .logo a {
-  font-weight: bold;
   color: var(--color-text);
   text-decoration: none;
 }
@@ -76,10 +75,10 @@ a:active {
     padding: 0 5%;
   }
   header {
-    margin: 4.2rem 0;
+    margin: 2rem 0;
   }
   nav {
-    margin: 0 auto 3rem;
+    margin: 0 auto 1rem;
     text-align: center;
   }
   footer {
@@ -87,7 +86,7 @@ a:active {
   }
   .logo {
     text-align: center;
-    margin: 1rem auto 3rem;
+    margin: 0 auto 0.5rem;
   }
   .logo a {
     font-size: 2.4rem;
@@ -105,10 +104,10 @@ a:active {
     padding: 0 5%;
   }
   header {
-    margin: 4.2rem 0;
+    margin: 2rem 0;
   }
   nav {
-    margin: 0 auto 3rem;
+    margin: 0 auto 1rem;
     text-align: center;
   }
   footer {
@@ -116,7 +115,6 @@ a:active {
   }
   .logo {
     text-align: center;
-    margin: 1rem auto 3rem;
   }
   .logo a {
     font-size: 2.4rem;
@@ -129,12 +127,17 @@ a:active {
 
 @media (min-width: 640px) {
   body {
-    width: 80ch;
+    display: flex;
+    flex-direction: column;
+    width: min(90vw, 80ch);
+    min-height: 100vh;
     margin: 0 auto;
     padding: 0;
   }
   header {
-    margin: 0 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     padding: 1.2rem 0;
   }
   nav {
@@ -145,15 +148,13 @@ a:active {
     margin: 0 0 0 1.2rem;
     display: inline;
   }
+  main {
+    flex-grow: 1;
+  }
   footer {
     text-align: right;
   }
-  .logo {
-    margin: 0;
-    text-align: left;
-  }
   .logo a {
-    float: left;
-    font-size: 1.8rem;
+    font-size: 2.4rem;
   }
 }

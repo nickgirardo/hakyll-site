@@ -5,10 +5,11 @@
     flake-utils.url = "github:numtide/flake-utils";
     resume.url = "github:nickgirardo/resume/6c15624737a6728cef98ccda8ceaf8efd951cab7";
     trone.url = "github:nickgirardo/trone/ade643ae500ace303959d0319c757811ba46b4bb";
+    sudoku.url = "github:nickgirardo/sudoku/eb40b3464d884c2b64c340fc1052577c06916967";
   };
 
 
-  outputs = { self, nixpkgs, flake-utils, haskellNix, resume, trone }:
+  outputs = { self, nixpkgs, flake-utils, haskellNix, resume, trone, sudoku }:
     let
       supportedSystems = [
         "x86_64-linux"
@@ -54,6 +55,7 @@
 
           resumeLoc = resume.outputs.packages.${system}.resume;
           troneLoc = trone.outputs.packages.${system}.trone;
+          sudokuLoc = sudoku.outputs.packages.${system}.sudoku;
 
           preBuildPhase = ''
                 # Preparing to copy over externally defined resources
@@ -65,6 +67,10 @@
                 # Trone
                 mkdir my-site/extern/trone/
                 (cd $troneLoc/dist; cp -r . $OLDPWD/my-site/extern/trone)
+
+                # Sudoku
+                mkdir my-site/extern/sudoku/
+                (cd $sudokuLoc/dist; cp -r . $OLDPWD/my-site/extern/sudoku)
               '';
 
           buildPhase = ''

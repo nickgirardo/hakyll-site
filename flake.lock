@@ -175,6 +175,27 @@
     "gitignore": {
       "inputs": {
         "nixpkgs": [
+          "sudoku",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1703887061,
+        "narHash": "sha256-gGPa9qWNc6eCXT/+Z5/zMkyYOuRZqeFZBDbopNZQkuY=",
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "rev": "43e1aa1308018f37118e34d3a9cb4f5e75dc11d5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "type": "github"
+      }
+    },
+    "gitignore_2": {
+      "inputs": {
+        "nixpkgs": [
           "trone",
           "nixpkgs"
         ]
@@ -614,6 +635,22 @@
     },
     "nixpkgs_3": {
       "locked": {
+        "lastModified": 1707272513,
+        "narHash": "sha256-AzYRCVpWcCAReIUJs5zAFPQw+Y/P5o5SHLdXZgJ2P1M=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "88d128f5f35be5d405fe874495604f3f29350a5f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "release-23.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
         "lastModified": 1706905405,
         "narHash": "sha256-Jts2FPpB58OXRxIk6Lq1w3O2RelpmJ9fEkgTaVJT6nM=",
         "owner": "nixos",
@@ -673,6 +710,7 @@
           "nixpkgs-unstable"
         ],
         "resume": "resume",
+        "sudoku": "sudoku",
         "trone": "trone"
       }
     },
@@ -689,6 +727,26 @@
       "original": {
         "owner": "input-output-hk",
         "repo": "stackage.nix",
+        "type": "github"
+      }
+    },
+    "sudoku": {
+      "inputs": {
+        "gitignore": "gitignore",
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1707350105,
+        "narHash": "sha256-HvYMu8icYMOXUTKExsZGDyPoxWvnPwENDJhmTx3UahQ=",
+        "owner": "nickgirardo",
+        "repo": "sudoku",
+        "rev": "eb40b3464d884c2b64c340fc1052577c06916967",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nickgirardo",
+        "repo": "sudoku",
+        "rev": "eb40b3464d884c2b64c340fc1052577c06916967",
         "type": "github"
       }
     },
@@ -709,8 +767,8 @@
     },
     "trone": {
       "inputs": {
-        "gitignore": "gitignore",
-        "nixpkgs": "nixpkgs_3"
+        "gitignore": "gitignore_2",
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
         "lastModified": 1706922029,

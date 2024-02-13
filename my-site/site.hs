@@ -20,17 +20,10 @@ main = hakyll $ do
         route idRoute
         compile compressCssCompiler
 
-    match (fromList ["projects.markdown"]) $ do
+    match (fromList ["index.md", "projects.md"]) $ do
         route $ setExtension "html"
         compile $
             pandocCompiler
-                >>= loadAndApplyTemplate "templates/default.html" defaultContext
-                >>= relativizeUrls
-
-    match "index.html" $ do
-        route idRoute
-        compile $
-            getResourceBody
                 >>= loadAndApplyTemplate "templates/default.html" defaultContext
                 >>= relativizeUrls
 

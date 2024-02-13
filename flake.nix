@@ -4,7 +4,7 @@
     haskellNix.url = "github:input-output-hk/haskell.nix";
     flake-utils.url = "github:numtide/flake-utils";
     resume.url = "github:nickgirardo/resume/6c15624737a6728cef98ccda8ceaf8efd951cab7";
-    trone.url = "github:nickgirardo/trone/ade643ae500ace303959d0319c757811ba46b4bb";
+    trone.url = "github:nickgirardo/trone/dfc7629ee86be4bed705f17b92d028abbf9c2fb4";
     sudoku.url = "github:nickgirardo/sudoku/eb40b3464d884c2b64c340fc1052577c06916967";
   };
 

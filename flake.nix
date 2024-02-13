@@ -88,9 +88,31 @@
           '';
         };
       in flake // {
-        apps.default = flake-utils.lib.mkApp {
-          drv = hakyll-site;
-          exePath = "/bin/site";
+        apps = let
+          serv = pkgs.writeShellApplication {
+            # Our shell script name is serve
+            # so it is available at $out/bin/serve
+            name = "serve";
+            # Caddy is a web server with a convenient CLI interface
+            runtimeInputs = [pkgs.caddy];
+            text = ''
+              # Serve the current directory on port 8090
+              caddy file-server --listen :8080 --root ${website.outPath}/dist
+            '';
+          };
+        in {
+          serve = {
+            type = "app";
+            # Using a derivation in here gets replaced
+            # with the path to the built output
+            program = "${serv}/bin/serve";
+          };
+          default = {
+            type = "app";
+            # Using a derivation in here gets replaced
+            # with the path to the built output
+            program = "${serv}/bin/serve";
+          };
         };
 
         packages = {

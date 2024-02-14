@@ -175,7 +175,7 @@
     "gitignore": {
       "inputs": {
         "nixpkgs": [
-          "sudoku",
+          "grid-tetris",
           "nixpkgs"
         ]
       },
@@ -196,6 +196,48 @@
     "gitignore_2": {
       "inputs": {
         "nixpkgs": [
+          "ld48-42",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1703887061,
+        "narHash": "sha256-gGPa9qWNc6eCXT/+Z5/zMkyYOuRZqeFZBDbopNZQkuY=",
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "rev": "43e1aa1308018f37118e34d3a9cb4f5e75dc11d5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "type": "github"
+      }
+    },
+    "gitignore_3": {
+      "inputs": {
+        "nixpkgs": [
+          "sudoku",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1703887061,
+        "narHash": "sha256-gGPa9qWNc6eCXT/+Z5/zMkyYOuRZqeFZBDbopNZQkuY=",
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "rev": "43e1aa1308018f37118e34d3a9cb4f5e75dc11d5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "type": "github"
+      }
+    },
+    "gitignore_4": {
+      "inputs": {
+        "nixpkgs": [
           "trone",
           "nixpkgs"
         ]
@@ -211,6 +253,26 @@
       "original": {
         "owner": "hercules-ci",
         "repo": "gitignore.nix",
+        "type": "github"
+      }
+    },
+    "grid-tetris": {
+      "inputs": {
+        "gitignore": "gitignore",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1707880558,
+        "narHash": "sha256-3VmiaRAcfTntWj4Hr5tnl+TCbWIWhVBQo8nUTLWnspY=",
+        "owner": "nickgirardo",
+        "repo": "grid-tetris",
+        "rev": "9547afb3eecaf939bbb93685a48c583238cf5367",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nickgirardo",
+        "repo": "grid-tetris",
+        "rev": "9547afb3eecaf939bbb93685a48c583238cf5367",
         "type": "github"
       }
     },
@@ -420,6 +482,26 @@
         "url": "https://gitlab.haskell.org/hamishmack/iserv-proxy.git"
       }
     },
+    "ld48-42": {
+      "inputs": {
+        "gitignore": "gitignore_2",
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1707875993,
+        "narHash": "sha256-e9C2GrBKS7w3hM5QiFMMGSDYfZ70FpJZac5ZTFtilnA=",
+        "owner": "nickgirardo",
+        "repo": "ld48-42",
+        "rev": "ff194c48a9127712651b4c25e6bda3a8d91873e8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nickgirardo",
+        "repo": "ld48-42",
+        "rev": "ff194c48a9127712651b4c25e6bda3a8d91873e8",
+        "type": "github"
+      }
+    },
     "lowdown-src": {
       "flake": false,
       "locked": {
@@ -439,7 +521,7 @@
     "nix": {
       "inputs": {
         "lowdown-src": "lowdown-src",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "nixpkgs-regression": "nixpkgs-regression"
       },
       "locked": {
@@ -459,16 +541,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1657693803,
-        "narHash": "sha256-G++2CJ9u0E7NNTAi9n5G8TdDmGJXcIjkJ3NF8cetQB8=",
-        "owner": "NixOS",
+        "lastModified": 1707863453,
+        "narHash": "sha256-vfc/bwjCQgLARXKBVVJ//iuTu2cXlnJQA+xVBw7BpQE=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "365e1b3a859281cf11b94f87231adeabbdd878a2",
+        "rev": "d675ed1a08d96a8828b8f8fd2323e5ec024fd79b",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixos-22.05-small",
+        "owner": "nixos",
+        "ref": "release-23.11",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -619,6 +701,38 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1657693803,
+        "narHash": "sha256-G++2CJ9u0E7NNTAi9n5G8TdDmGJXcIjkJ3NF8cetQB8=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "365e1b3a859281cf11b94f87231adeabbdd878a2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-22.05-small",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1707863453,
+        "narHash": "sha256-vfc/bwjCQgLARXKBVVJ//iuTu2cXlnJQA+xVBw7BpQE=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "d675ed1a08d96a8828b8f8fd2323e5ec024fd79b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "release-23.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
         "lastModified": 1702860116,
         "narHash": "sha256-MlyohjWhsIeZH/O/UKascYuPGwK5iY2Psl34mAfBT7Q=",
         "owner": "nixos",
@@ -633,7 +747,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_5": {
       "locked": {
         "lastModified": 1707272513,
         "narHash": "sha256-AzYRCVpWcCAReIUJs5zAFPQw+Y/P5o5SHLdXZgJ2P1M=",
@@ -649,7 +763,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_4": {
+    "nixpkgs_6": {
       "locked": {
         "lastModified": 1706905405,
         "narHash": "sha256-Jts2FPpB58OXRxIk6Lq1w3O2RelpmJ9fEkgTaVJT6nM=",
@@ -684,7 +798,7 @@
     },
     "resume": {
       "inputs": {
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
         "lastModified": 1702879569,
@@ -704,7 +818,9 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
+        "grid-tetris": "grid-tetris",
         "haskellNix": "haskellNix",
+        "ld48-42": "ld48-42",
         "nixpkgs": [
           "haskellNix",
           "nixpkgs-unstable"
@@ -732,8 +848,8 @@
     },
     "sudoku": {
       "inputs": {
-        "gitignore": "gitignore",
-        "nixpkgs": "nixpkgs_3"
+        "gitignore": "gitignore_3",
+        "nixpkgs": "nixpkgs_5"
       },
       "locked": {
         "lastModified": 1707350105,
@@ -767,8 +883,8 @@
     },
     "trone": {
       "inputs": {
-        "gitignore": "gitignore_2",
-        "nixpkgs": "nixpkgs_4"
+        "gitignore": "gitignore_4",
+        "nixpkgs": "nixpkgs_6"
       },
       "locked": {
         "lastModified": 1707795550,

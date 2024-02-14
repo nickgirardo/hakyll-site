@@ -6,10 +6,12 @@
     resume.url = "github:nickgirardo/resume/6c15624737a6728cef98ccda8ceaf8efd951cab7";
     trone.url = "github:nickgirardo/trone/dfc7629ee86be4bed705f17b92d028abbf9c2fb4";
     sudoku.url = "github:nickgirardo/sudoku/eb40b3464d884c2b64c340fc1052577c06916967";
+    ld48-42.url = "github:nickgirardo/ld48-42/ff194c48a9127712651b4c25e6bda3a8d91873e8";
+    grid-tetris.url = "github:nickgirardo/grid-tetris/9547afb3eecaf939bbb93685a48c583238cf5367";
   };
 
 
-  outputs = { self, nixpkgs, flake-utils, haskellNix, resume, trone, sudoku }:
+  outputs = { self, nixpkgs, flake-utils, haskellNix, resume, trone, sudoku, ld48-42, grid-tetris }:
     let
       supportedSystems = [
         "x86_64-linux"
@@ -56,6 +58,8 @@
           resumeLoc = resume.outputs.packages.${system}.resume;
           troneLoc = trone.outputs.packages.${system}.trone;
           sudokuLoc = sudoku.outputs.packages.${system}.sudoku;
+          ld4842Loc = ld48-42.outputs.packages.${system}.ld4842;
+          gridTetrisLoc = grid-tetris.outputs.packages.${system}.default;
 
           preBuildPhase = ''
                 # Preparing to copy over externally defined resources
@@ -71,6 +75,14 @@
                 # Sudoku
                 mkdir my-site/extern/sudoku/
                 (cd $sudokuLoc/dist; cp -r . $OLDPWD/my-site/extern/sudoku)
+
+                # Grid Tetris
+                mkdir my-site/extern/grid-tetris/
+                (cd $gridTetrisLoc/dist; cp -r . $OLDPWD/my-site/extern/grid-tetris)
+
+                # ld48-42
+                mkdir my-site/extern/ld48-42/
+                (cd $ld4842Loc/dist; cp -r . $OLDPWD/my-site/extern/ld48-42)
               '';
 
           buildPhase = ''

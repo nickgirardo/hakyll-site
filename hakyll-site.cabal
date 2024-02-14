@@ -72,7 +72,7 @@ executable hakyll-site
         hakyll ^>=4.16.2.0
 
     -- Directories containing source files.
-    hs-source-dirs:   my-site
+    hs-source-dirs:   site
 
     -- Base language which the package is written in.
     default-language: GHC2021

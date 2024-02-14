@@ -26,7 +26,7 @@
           (final: prev: {
             hakyllProject = final.haskell-nix.project' {
               compiler-nix-name = "ghc948";
-              src = ./my-site;
+              src = ./site;
               shell.buildInputs = [
                 hakyll-site
               ];
@@ -40,7 +40,7 @@
         ];
         pkgs = import nixpkgs { inherit system overlays; inherit (haskellNix) config; };
         flake = pkgs.hakyllProject.flake {};
-        hakyll-site = flake.packages."my-site:exe:site";
+        hakyll-site = flake.packages."site:exe:site";
         website = pkgs.stdenv.mkDerivation {
           name = "website";
           buildInputs = [];
@@ -63,32 +63,32 @@
 
           preBuildPhase = ''
                 # Preparing to copy over externally defined resources
-                mkdir my-site/extern/
+                mkdir site/extern/
 
                 # Resume
-                cp $resumeLoc/dist/resume.pdf my-site/extern/resume.pdf
+                cp $resumeLoc/dist/resume.pdf site/extern/resume.pdf
 
                 # Trone
-                mkdir my-site/extern/trone/
-                (cd $troneLoc/dist; cp -r . $OLDPWD/my-site/extern/trone)
+                mkdir site/extern/trone/
+                (cd $troneLoc/dist; cp -r . $OLDPWD/site/extern/trone)
 
                 # Sudoku
-                mkdir my-site/extern/sudoku/
-                (cd $sudokuLoc/dist; cp -r . $OLDPWD/my-site/extern/sudoku)
+                mkdir site/extern/sudoku/
+                (cd $sudokuLoc/dist; cp -r . $OLDPWD/site/extern/sudoku)
 
                 # Grid Tetris
-                mkdir my-site/extern/grid-tetris/
-                (cd $gridTetrisLoc/dist; cp -r . $OLDPWD/my-site/extern/grid-tetris)
+                mkdir site/extern/grid-tetris/
+                (cd $gridTetrisLoc/dist; cp -r . $OLDPWD/site/extern/grid-tetris)
 
                 # ld48-42
-                mkdir my-site/extern/ld48-42/
-                (cd $ld4842Loc/dist; cp -r . $OLDPWD/my-site/extern/ld48-42)
+                mkdir site/extern/ld48-42/
+                (cd $ld4842Loc/dist; cp -r . $OLDPWD/site/extern/ld48-42)
               '';
 
           buildPhase = ''
                 runHook preBuildPhase
 
-                cd my-site/
+                cd site/
                 ${hakyll-site}/bin/site build --verbose
                 # Return to the directory we started in
                 cd ..
@@ -96,7 +96,7 @@
 
           installPhase = ''
             mkdir -p "$out/dist"
-            cp -a my-site/_site/. "$out/dist"
+            cp -a site/_site/. "$out/dist"
           '';
         };
       in flake // {

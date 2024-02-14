@@ -6,29 +6,57 @@ title: Projects
 
 <div id="trone" class="project">
     <h3>Trone</h3>
-    <p>Description for Trone here!</p>
-    <div class="links">
-        <a href="./trone/index.html" target="_blank">Trone</a>
-        <a href="https://github.com/nickgirardo/trone" target="_blank">Source</a>
+    <div class="project-body">
+        <p>A minimalist kanban tool.</p>
+        <p>
+            I had wanted to keep myself organized with a kanban tool, but I found a lot of the bells and whistles of tools like Trello and Planka distracting.
+            Furthermore, most comercial tools do not allow you to control your own data, and even open source self-hostable alternatives tend to have complicated database setups.
+        </p>
+        <p>
+            This tool is therefore designed for my own needs and desires.
+            Basically all features which could be removed are, and data is stored locally in <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB</a>
+            (with basic import/ export functionality).
+        </p>
+        <p>
+            There is still work to consider.  I do find myself missing cross-device data syncing.
+            In the future I'd like to experiment with a "Bring Your Own Storage" sort of approach, where users can locally store keys to their own block storage (e.g. S3)
+            which should allow for data syncing without entirely relinquishing control of one's data (at the cost of potentially involved setup).
+        </p>
+        <div class="links">
+            <a href="./trone/index.html" target="_blank">Trone</a>
+            <a href="https://github.com/nickgirardo/trone" target="_blank">Source</a>
+        </div>
     </div>
 </div>
 
 <div id="sudoku" class="project">
     <h3>Sudoku</h3>
-    <p>Description for Sudoku here!</p>
-    <div class="links">
-        <a href="./sudoku/builder.html" target="_blank">Sudoku Builder</a>
-        <a href="./sudoku/player.html" target="_blank">Sudoku Player</a>
-        <a href="https://github.com/nickgirardo/sudoku" target="_blank">Source</a>
+    <div class="project-body">
+        <p>
+            A fairly basic implementation of a Sudoku puzzle player and builder.
+        </p>
+        <p>
+            What makes this project interesting is that puzzles are stored in the query string.
+            Users can therefore share there levels as normal hyperlinks, without a need for the puzzles to be stored on any server.
+            Even the static page where the puzzle is played could in theory be replaced by any static page implementing the same logic of decoding the puzzle
+            (described <a href="https://github.com/nickgirardo/sudoku?tab=readme-ov-file#decoding-and-encoding-v1-puzzles">here</a>).
+        </p>
+        <div class="links">
+            <a href="./sudoku/player.html" target="_blank">Sudoku Player</a>
+            <a href="./sudoku/builder.html" target="_blank">Sudoku Builder</a>
+            <a href="https://github.com/nickgirardo/sudoku" target="_blank">Source</a>
+        </div>
     </div>
 </div>
 
 <div id="mathjax-loader" class="project">
     <h3>mathjax-loader</h3>
-    <p>Webpack loader to transform TeX, MathML, and AsciiMath files to SVGs via MathJax.</p>
-    <div class="links">
-        <a href="https://www.npmjs.com/package/mathjax-loader" target="_blank">View on npm</a>
-        <a href="https://github.com/nickgirardo/mathjax-loader" target="_blank">Source</a>
+    <div class="project-body">
+        <p>A Webpack loader to transform TeX, MathML, and AsciiMath files to SVGs via MathJax.</p>
+        <div class="links">
+            <a href="https://www.npmjs.com/package/mathjax-loader" target="_blank">View on npm</a>
+            <a href="https://github.com/nickgirardo/mathjax-loader" target="_blank">Source</a>
+        </div>
     </div>
 </div>
 
@@ -36,50 +64,60 @@ title: Projects
 
 <div id="context-play-pause" class="project">
     <h3>Context Play/ Pause</h3>
-    <p>
-        A simple WebExtension: This allows its user to play or pause a tab's video by an option in the tab's context menu.
-        This was made before a change in Firefox which allowed users to control videos similarly with function keys.
-        This significantly reduced the need for the WebExtension, but I still find myself using it from time to time.
-    </p>
-    <div class="links">
-        <a href="https://addons.mozilla.org/en-US/firefox/addon/context-play-pause/" target="_blank">View on Firefox Add-Ons</a>
-        <a href="https://github.com/nickgirardo/context-play-pause" target="_blank">Source</a>
+    <div class="project-body">
+        <p>
+            A simple WebExtension: This allows its user to play or pause a tab's video by an option in the tab's context menu.
+            This was made before a change in Firefox which allowed users to control videos similarly with function keys.
+            This significantly reduced the need for the WebExtension, but I still find myself using it from time to time.
+        </p>
+        <p>
+            This WebExtension will require an update to Manifest V3 in the near future to continue functioning, but I have thus far
+            been quite happy with and impressed by the ability for this to continue functioning without maintenance for years.
+        </p>
+        <div class="links">
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/context-play-pause/" target="_blank">View on Firefox Add-Ons</a>
+            <a href="https://github.com/nickgirardo/context-play-pause" target="_blank">Source</a>
+        </div>
     </div>
 </div>
 
 <div id="grid-tetris" class="project">
     <h3>Grid Tetris</h3>
-    <p>Experimental implementation of classic video game Tetris using CSS Grid for all display.</p>
-    <p>Controls:</p>
-    <ul>
-        <li>A/D: Move right and left</li>
-        <li>J/K: Rotate piece</li>
-        <li>S: Soft drop</li>
-        <li>W: Hard drop</li>
-        <li>Space: Hold piece</li>
-    </ul>
-    <p>This game lacks mobile support as a keyboard is required.</p>
-    <div class="links">
-        <a href="./grid-tetris/index.html" target="_blank">Play Grid Tetris</a>
-        <a href="https://github.com/nickgirardo/grid-tetris" target="_blank">Source</a>
+    <div class="project-body">
+        <p>Experimental implementation of classic video game Tetris using CSS Grid for all display.</p>
+        <p>Controls:</p>
+        <ul>
+            <li>A/D: Move right and left</li>
+            <li>J/K: Rotate piece</li>
+            <li>S: Soft drop</li>
+            <li>W: Hard drop</li>
+            <li>Space: Hold piece</li>
+        </ul>
+        <p>This game lacks mobile support as a keyboard is required.</p>
+        <div class="links">
+            <a href="./grid-tetris/index.html" target="_blank">Grid Tetris</a>
+            <a href="https://github.com/nickgirardo/grid-tetris" target="_blank">Source</a>
+        </div>
     </div>
 </div>
 
 <div id="ld42" class="project">
     <h3>Running out of Space</h3>
-    <p>
-        Action game created in 48 hours for Ludum Dare 42 competition.
-        Competion theme: "Running out of Space."
-        Navigate ship through waves of enemies and a shrinking arena.
-    </p>
-    <p>Controls:</p>
-    <ul>
-        <li>WASD: Move</li>
-        <li>Click: Fire</li>
-    </ul>
-    <p>This game lacks mobile support as a keyboard and mouse are required.</p>
-    <div class="links">
-        <a href="./ld48-42/index.html" target="_blank">Play Running out of Space</a>
-        <a href="https://github.com/nickgirardo/ld48-42" target="_blank">Source</a>
+    <div class="project-body">
+        <p>
+            Action game created in 48 hours for Ludum Dare 42 competition.
+            Competion theme: "Running out of Space."
+            Navigate ship through waves of enemies and a shrinking arena.
+        </p>
+        <p>Controls:</p>
+        <ul>
+            <li>WASD: Move</li>
+            <li>Click: Fire</li>
+        </ul>
+        <p>This game lacks mobile support as a keyboard and mouse are required.</p>
+        <div class="links">
+            <a href="./ld48-42/index.html" target="_blank">Running out of Space</a>
+            <a href="https://github.com/nickgirardo/ld48-42" target="_blank">Source</a>
+        </div>
     </div>
 </div>

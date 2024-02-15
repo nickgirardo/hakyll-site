@@ -55,34 +55,34 @@
             (pkgs.buildPlatform.libc == "glibc")
             "${pkgs.glibcLocales}/lib/locale/locale-archive";
 
-          resumeLoc = resume.outputs.packages.${system}.resume;
-          troneLoc = trone.outputs.packages.${system}.trone;
-          sudokuLoc = sudoku.outputs.packages.${system}.sudoku;
-          ld4842Loc = ld48-42.outputs.packages.${system}.ld4842;
-          gridTetrisLoc = grid-tetris.outputs.packages.${system}.default;
+          resumePath = resume.outputs.packages.${system}.resume;
+          tronePath = trone.outputs.packages.${system}.trone;
+          sudokuPath = sudoku.outputs.packages.${system}.sudoku;
+          ld4842Path = ld48-42.outputs.packages.${system}.ld4842;
+          gridTetrisPath = grid-tetris.outputs.packages.${system}.default;
 
           preBuildPhase = ''
                 # Preparing to copy over externally defined resources
                 mkdir site/extern/
 
                 # Resume
-                cp $resumeLoc/dist/resume.pdf site/extern/resume.pdf
+                cp $resumePath/dist/resume.pdf site/extern/resume.pdf
 
                 # Trone
                 mkdir site/extern/trone/
-                (cd $troneLoc/dist; cp -r . $OLDPWD/site/extern/trone)
+                (cd $tronePath/dist; cp -r . $OLDPWD/site/extern/trone)
 
                 # Sudoku
                 mkdir site/extern/sudoku/
-                (cd $sudokuLoc/dist; cp -r . $OLDPWD/site/extern/sudoku)
+                (cd $sudokuPath/dist; cp -r . $OLDPWD/site/extern/sudoku)
 
                 # Grid Tetris
                 mkdir site/extern/grid-tetris/
-                (cd $gridTetrisLoc/dist; cp -r . $OLDPWD/site/extern/grid-tetris)
+                (cd $gridTetrisPath/dist; cp -r . $OLDPWD/site/extern/grid-tetris)
 
                 # ld48-42
                 mkdir site/extern/ld48-42/
-                (cd $ld4842Loc/dist; cp -r . $OLDPWD/site/extern/ld48-42)
+                (cd $ld4842Path/dist; cp -r . $OLDPWD/site/extern/ld48-42)
               '';
 
           buildPhase = ''

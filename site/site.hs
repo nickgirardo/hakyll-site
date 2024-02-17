@@ -8,6 +8,8 @@ import Hakyll
 
 main :: IO ()
 main = hakyll $ do
+    -- Externally defined dependencies
+    -- Remove the "extern/" prefix but otherwise copy as is
     match "extern/**" $ do
         route $ customRoute ((\\ "extern/") . toFilePath)
         compile copyFileCompiler

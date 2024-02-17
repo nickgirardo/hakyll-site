@@ -1,4 +1,6 @@
 {
+  description = "The personal site of Nick Girardo";
+
   inputs = {
     nixpkgs.follows = "haskellNix/nixpkgs-unstable";
     haskellNix.url = "github:input-output-hk/haskell.nix";

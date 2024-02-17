@@ -1,5 +1,7 @@
 # Personal Site of Nick Girardo
 
+[Live link](https://nickgirardo.com/)
+
 This website is built with [Hakyll](https://jaspervdj.be/hakyll/) and makes heavy use of [Nix](https://nixos.org/).
 
 ## Structure

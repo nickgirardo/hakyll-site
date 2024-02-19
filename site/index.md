@@ -9,7 +9,7 @@ I primarily work in full-stack and front-end web development.
 For more details on my past work, check out [my resume](./resume.pdf).
 
 My other technical interests include graphics programming, constraint systems, and reproducibility.
-This website uses Nix fetch external dependecies and ensure reproduciblity.
+This website uses Nix to fetch external dependecies and ensure reproduciblity.
 You can check out some of my other projects [here](./projects.html).
 
 I am currently looking for full-time or consulting work.

@@ -217,7 +217,7 @@
     "gitignore_3": {
       "inputs": {
         "nixpkgs": [
-          "sudoku",
+          "resume",
           "nixpkgs"
         ]
       },
@@ -236,6 +236,27 @@
       }
     },
     "gitignore_4": {
+      "inputs": {
+        "nixpkgs": [
+          "sudoku",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1703887061,
+        "narHash": "sha256-gGPa9qWNc6eCXT/+Z5/zMkyYOuRZqeFZBDbopNZQkuY=",
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "rev": "43e1aa1308018f37118e34d3a9cb4f5e75dc11d5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "type": "github"
+      }
+    },
+    "gitignore_5": {
       "inputs": {
         "nixpkgs": [
           "trone",
@@ -798,20 +819,21 @@
     },
     "resume": {
       "inputs": {
+        "gitignore": "gitignore_3",
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1702879569,
-        "narHash": "sha256-85/S6kuEV/BMkNj6lrDr5Nq9SRnn/1vsX9MWf/9o3vU=",
+        "lastModified": 1708308714,
+        "narHash": "sha256-gsJiQRno1FbWrVljAeC3puRlvBly9jjbSSeb0iXoIak=",
         "owner": "nickgirardo",
         "repo": "resume",
-        "rev": "6c15624737a6728cef98ccda8ceaf8efd951cab7",
+        "rev": "b836d69f7ad1d835533f74494c74c22f543dccc7",
         "type": "github"
       },
       "original": {
         "owner": "nickgirardo",
         "repo": "resume",
-        "rev": "6c15624737a6728cef98ccda8ceaf8efd951cab7",
+        "rev": "b836d69f7ad1d835533f74494c74c22f543dccc7",
         "type": "github"
       }
     },
@@ -848,7 +870,7 @@
     },
     "sudoku": {
       "inputs": {
-        "gitignore": "gitignore_3",
+        "gitignore": "gitignore_4",
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
@@ -883,7 +905,7 @@
     },
     "trone": {
       "inputs": {
-        "gitignore": "gitignore_4",
+        "gitignore": "gitignore_5",
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {

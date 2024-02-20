@@ -3,11 +3,17 @@
 
 import Data.List ((\\))
 import Hakyll
+import System.Environment (lookupEnv)
 
 --------------------------------------------------------------------------------
 
 main :: IO ()
-main = hakyll $ do
+main = do
+    lastUpdated <- maybe "" ("last updated " <>) <$> (lookupEnv "LAST_UPDATED")
+    hakyll $ siteRules $ lastUpdatedCtx lastUpdated
+
+siteRules :: Context String -> Rules ()
+siteRules ctx = do
     -- Externally defined dependencies
     -- Remove the "extern/" prefix but otherwise copy as is
     match "extern/**" $ do
@@ -27,7 +33,7 @@ main = hakyll $ do
         route $ setExtension "html"
         compile $
             pandocCompiler
-                >>= loadAndApplyTemplate "templates/default.html" defaultContext
+                >>= loadAndApplyTemplate "templates/default.html" ctx
                 >>= relativizeUrls
 
     -- Basic html files
@@ -35,7 +41,11 @@ main = hakyll $ do
         route idRoute
         compile $
             getResourceBody
-                >>= loadAndApplyTemplate "templates/default.html" defaultContext
+                >>= loadAndApplyTemplate "templates/default.html" ctx
                 >>= relativizeUrls
 
     match "templates/*" $ compile templateBodyCompiler
+
+
+lastUpdatedCtx :: String -> Context String
+lastUpdatedCtx lastUpdated = defaultContext <> constField "lastUpdated" lastUpdated

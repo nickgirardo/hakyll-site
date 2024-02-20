@@ -90,6 +90,8 @@
           buildPhase = ''
                 runHook preBuildPhase
 
+                export LAST_UPDATED="2024-02-19"
+
                 cd site/
                 ${hakyll-site}/bin/site build --verbose
                 # Return to the directory we started in

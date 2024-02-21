@@ -909,17 +909,17 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1707954396,
-        "narHash": "sha256-T4dnU14i3rkyxDB1lrwIQdeOddFRnQ/SuwgyeNf/Ytc=",
+        "lastModified": 1708554760,
+        "narHash": "sha256-Y6cMOXnwCXbUOTSIR5/9LEOl5xPMtuW0TBk1du1fsHA=",
         "owner": "nickgirardo",
         "repo": "trone",
-        "rev": "5da08acce64344a4e04b287caf29b7b34ddbb109",
+        "rev": "fe21b76b83bad4604f582b4023cd3ea5ff715e32",
         "type": "github"
       },
       "original": {
         "owner": "nickgirardo",
         "repo": "trone",
-        "rev": "5da08acce64344a4e04b287caf29b7b34ddbb109",
+        "rev": "fe21b76b83bad4604f582b4023cd3ea5ff715e32",
         "type": "github"
       }
     }

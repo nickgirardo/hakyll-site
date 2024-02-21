@@ -823,17 +823,17 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1708308714,
-        "narHash": "sha256-gsJiQRno1FbWrVljAeC3puRlvBly9jjbSSeb0iXoIak=",
+        "lastModified": 1708477615,
+        "narHash": "sha256-tQmIeRlQRHztkrfk/UPGzm1m02XN+WlOAScjzRuKpV0=",
         "owner": "nickgirardo",
         "repo": "resume",
-        "rev": "b836d69f7ad1d835533f74494c74c22f543dccc7",
+        "rev": "75eec8e30d7d85a4b4d9bc0664bd2ec0694a0ee9",
         "type": "github"
       },
       "original": {
         "owner": "nickgirardo",
         "repo": "resume",
-        "rev": "b836d69f7ad1d835533f74494c74c22f543dccc7",
+        "rev": "75eec8e30d7d85a4b4d9bc0664bd2ec0694a0ee9",
         "type": "github"
       }
     },

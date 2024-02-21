@@ -5,7 +5,7 @@
     nixpkgs.follows = "haskellNix/nixpkgs-unstable";
     haskellNix.url = "github:input-output-hk/haskell.nix";
     flake-utils.url = "github:numtide/flake-utils";
-    resume.url = "github:nickgirardo/resume/b836d69f7ad1d835533f74494c74c22f543dccc7";
+    resume.url = "github:nickgirardo/resume/75eec8e30d7d85a4b4d9bc0664bd2ec0694a0ee9";
     trone.url = "github:nickgirardo/trone/5da08acce64344a4e04b287caf29b7b34ddbb109";
     sudoku.url = "github:nickgirardo/sudoku/eb40b3464d884c2b64c340fc1052577c06916967";
     ld48-42.url = "github:nickgirardo/ld48-42/ff194c48a9127712651b4c25e6bda3a8d91873e8";

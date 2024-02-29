@@ -12,5 +12,9 @@ My other technical interests include graphics programming, constraint systems, a
 This website uses Nix to fetch external dependecies and ensure reproduciblity.
 You can check out some of my other projects [here](./projects.html).
 
+I serve as a member on the board of [HackManhattan](https://hackmanhattan.com/), Manhattans's Public Makerspace.
+HackManhattan is a non-profit, all-volunteer hackerspace.
+If you find yourself in New York on a Tuesday or Thursday night, please come visit our open house!
+
 I am currently looking for full-time or consulting work.
 If you are interested in working with me, you can reach me at [nickgirardo@gmail.com](mailto:nickgirardo@gmail.com).

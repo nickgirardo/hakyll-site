@@ -7,6 +7,7 @@ title: About
 I'm a software engineer based out of New York.
 I primarily work in full-stack and front-end web development.
 For more details on my past work, check out [my resume](./resume.pdf).
+You can also find more things I've done on [my GitHub](https://github.com/nickgirardo).
 
 My other technical interests include graphics programming, constraint systems, and reproducibility.
 This website uses Nix to fetch external dependecies and ensure reproduciblity.

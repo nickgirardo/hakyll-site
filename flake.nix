@@ -10,10 +10,11 @@
     sudoku.url = "github:nickgirardo/sudoku/eb40b3464d884c2b64c340fc1052577c06916967";
     ld48-42.url = "github:nickgirardo/ld48-42/ff194c48a9127712651b4c25e6bda3a8d91873e8";
     grid-tetris.url = "github:nickgirardo/grid-tetris/9547afb3eecaf939bbb93685a48c583238cf5367";
+    avhg.url = "github:nickgirardo/gt-a-very-hard-game/a7743704e5a15d57748b347b0d46609a8ca46d3d";
   };
 
 
-  outputs = { self, nixpkgs, flake-utils, haskellNix, resume, trone, sudoku, ld48-42, grid-tetris }:
+  outputs = { self, nixpkgs, flake-utils, haskellNix, resume, trone, sudoku, ld48-42, grid-tetris, avhg }:
     let
       supportedSystems = [
         "x86_64-linux"
@@ -62,6 +63,7 @@
           sudokuPath = sudoku.outputs.packages.${system}.sudoku;
           ld4842Path = ld48-42.outputs.packages.${system}.ld4842;
           gridTetrisPath = grid-tetris.outputs.packages.${system}.default;
+          avhgPath = avhg.outputs.packages.${system}.web-emulator;
 
           preBuildPhase = ''
                 # Preparing to copy over externally defined resources
@@ -85,6 +87,10 @@
                 # ld48-42
                 mkdir site/extern/ld48-42/
                 (cd $ld4842Path/dist; cp -r . $OLDPWD/site/extern/ld48-42)
+
+                # A very hard game
+                mkdir site/extern/a-very-hard-game/
+                (cd $avhgPath/dist; cp -r . $OLDPWD/site/extern/a-very-hard-game)
               '';
 
           buildPhase = ''

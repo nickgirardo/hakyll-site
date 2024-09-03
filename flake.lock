@@ -339,6 +339,27 @@
     "gitignore_5": {
       "inputs": {
         "nixpkgs": [
+          "sound-sculptor",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1709087332,
+        "narHash": "sha256-HG2cCnktfHsKV0s4XW83gU3F57gaTljL9KNSuG6bnQs=",
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "rev": "637db329424fd7e46cf4185293b9cc8c88c95394",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "type": "github"
+      }
+    },
+    "gitignore_6": {
+      "inputs": {
+        "nixpkgs": [
           "sudoku",
           "nixpkgs"
         ]
@@ -357,7 +378,7 @@
         "type": "github"
       }
     },
-    "gitignore_6": {
+    "gitignore_7": {
       "inputs": {
         "nixpkgs": [
           "trone",
@@ -823,6 +844,22 @@
     },
     "nixpkgs_10": {
       "locked": {
+        "lastModified": 1707272513,
+        "narHash": "sha256-AzYRCVpWcCAReIUJs5zAFPQw+Y/P5o5SHLdXZgJ2P1M=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "88d128f5f35be5d405fe874495604f3f29350a5f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "release-23.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_11": {
+      "locked": {
         "lastModified": 1706905405,
         "narHash": "sha256-Jts2FPpB58OXRxIk6Lq1w3O2RelpmJ9fEkgTaVJT6nM=",
         "owner": "nixos",
@@ -951,11 +988,11 @@
     },
     "nixpkgs_9": {
       "locked": {
-        "lastModified": 1707272513,
-        "narHash": "sha256-AzYRCVpWcCAReIUJs5zAFPQw+Y/P5o5SHLdXZgJ2P1M=",
+        "lastModified": 1718548739,
+        "narHash": "sha256-SCKSTpxrFG/z0ymKcGgZk5Z2sBARNlJzmG/JI7v8ntg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "88d128f5f35be5d405fe874495604f3f29350a5f",
+        "rev": "eb04fca4de8d2f6e170a7ff3279ca47a37cced1c",
         "type": "github"
       },
       "original": {
@@ -1014,8 +1051,29 @@
           "nixpkgs-unstable"
         ],
         "resume": "resume",
+        "sound-sculptor": "sound-sculptor",
         "sudoku": "sudoku",
         "trone": "trone"
+      }
+    },
+    "sound-sculptor": {
+      "inputs": {
+        "gitignore": "gitignore_5",
+        "nixpkgs": "nixpkgs_9"
+      },
+      "locked": {
+        "lastModified": 1720746197,
+        "narHash": "sha256-8Unsduc8n1ZZmz3QvQgPeYd3JgaHQJsxHoEbSRsD/UI=",
+        "owner": "nickgirardo",
+        "repo": "gt-sound-sculptor",
+        "rev": "d74afd3868add5ff17bc57fbcb0c360f01717b06",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nickgirardo",
+        "repo": "gt-sound-sculptor",
+        "rev": "d74afd3868add5ff17bc57fbcb0c360f01717b06",
+        "type": "github"
       }
     },
     "stackage": {
@@ -1036,8 +1094,8 @@
     },
     "sudoku": {
       "inputs": {
-        "gitignore": "gitignore_5",
-        "nixpkgs": "nixpkgs_9"
+        "gitignore": "gitignore_6",
+        "nixpkgs": "nixpkgs_10"
       },
       "locked": {
         "lastModified": 1707350105,
@@ -1071,8 +1129,8 @@
     },
     "trone": {
       "inputs": {
-        "gitignore": "gitignore_6",
-        "nixpkgs": "nixpkgs_10"
+        "gitignore": "gitignore_7",
+        "nixpkgs": "nixpkgs_11"
       },
       "locked": {
         "lastModified": 1708554760,

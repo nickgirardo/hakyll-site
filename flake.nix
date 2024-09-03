@@ -11,10 +11,11 @@
     ld48-42.url = "github:nickgirardo/ld48-42/ff194c48a9127712651b4c25e6bda3a8d91873e8";
     grid-tetris.url = "github:nickgirardo/grid-tetris/9547afb3eecaf939bbb93685a48c583238cf5367";
     avhg.url = "github:nickgirardo/gt-a-very-hard-game/a7743704e5a15d57748b347b0d46609a8ca46d3d";
+    sound-sculptor.url = "github:nickgirardo/gt-sound-sculptor/d74afd3868add5ff17bc57fbcb0c360f01717b06";
   };
 
 
-  outputs = { self, nixpkgs, flake-utils, haskellNix, resume, trone, sudoku, ld48-42, grid-tetris, avhg }:
+  outputs = { self, nixpkgs, flake-utils, haskellNix, resume, trone, sudoku, ld48-42, grid-tetris, avhg, sound-sculptor }:
     let
       supportedSystems = [
         "x86_64-linux"
@@ -64,6 +65,7 @@
           ld4842Path = ld48-42.outputs.packages.${system}.ld4842;
           gridTetrisPath = grid-tetris.outputs.packages.${system}.default;
           avhgPath = avhg.outputs.packages.${system}.web-emulator;
+          soundSculptorPath = sound-sculptor.outputs.packages.${system}.default;
 
           preBuildPhase = ''
                 # Preparing to copy over externally defined resources
@@ -91,6 +93,10 @@
                 # A very hard game
                 mkdir site/extern/a-very-hard-game/
                 (cd $avhgPath/dist; cp -r . $OLDPWD/site/extern/a-very-hard-game)
+
+                # Sound Sculptor
+                mkdir site/extern/gt-sound-sculptor/
+                (cd $soundSculptorPath/dist; cp -r . $OLDPWD/site/extern/gt-sound-sculptor)
               '';
 
           buildPhase = ''

@@ -44,7 +44,10 @@ I would not, however, consider AVHG to be a direct clone of WHG as they differed
 While I didn't want to have too much distracting from the core gameplay, there were a couple features added to increase replayability. While developing AVHG, I often kept in mind that it would likely mostly be played at [HackManhattan](https://hackmanhattan.com). HackManhattan is a hackerspace that Clyde and I are both members of which has a GameTank on permanent display. Visitors are often very interested in the GameTank. Knowing this, a score table was a feature I definitely wanted to include.
 
 <figure>
-    <img class="bordered" src="/images/hello_kitty.jpg" />
+    <picture>
+	<source srcset="/images/hello_kitty.avif" type="image/avif" />
+	<img class="bordered" src="/images/hello_kitty.jpg" />
+    </picture>
     <figcaption>
 The famous Hello Kitty edition GameTank, at its home of HackManhattan.
 To its side are a number of GameTank cartriges, including the final AVHG cartridge and one from earlier in development.

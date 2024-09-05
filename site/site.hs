@@ -36,6 +36,14 @@ siteRules ctx = do
                 >>= loadAndApplyTemplate "templates/default.html" ctx
                 >>= relativizeUrls
 
+    -- Markdown posts
+    match "posts/*.md" $ do
+        route $ setExtension "html"
+	compile $
+	    pandocCompiler
+                >>= loadAndApplyTemplate "templates/default.html" ctx
+                >>= relativizeUrls
+
     -- Basic html files
     match (fromList ["projects.html"]) $ do
         route idRoute

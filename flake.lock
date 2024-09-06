@@ -1025,17 +1025,17 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1708477615,
-        "narHash": "sha256-tQmIeRlQRHztkrfk/UPGzm1m02XN+WlOAScjzRuKpV0=",
+        "lastModified": 1725601631,
+        "narHash": "sha256-eHDoTnfG/TpKcIpiGsjlPyPIYkSKQpFzwEOPkpJc81w=",
         "owner": "nickgirardo",
         "repo": "resume",
-        "rev": "75eec8e30d7d85a4b4d9bc0664bd2ec0694a0ee9",
+        "rev": "2e0701b3aad73d267c0a4ef80b161f792b0a94f5",
         "type": "github"
       },
       "original": {
         "owner": "nickgirardo",
         "repo": "resume",
-        "rev": "75eec8e30d7d85a4b4d9bc0664bd2ec0694a0ee9",
+        "rev": "2e0701b3aad73d267c0a4ef80b161f792b0a94f5",
         "type": "github"
       }
     },

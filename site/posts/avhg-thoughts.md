@@ -46,7 +46,7 @@ While I didn't want to have too much distracting from the core gameplay, there w
 <figure>
     <picture>
 	<source srcset="/images/hello_kitty.avif" type="image/avif" />
-	<img class="bordered" src="/images/hello_kitty.jpg" />
+	<img src="/images/hello_kitty.jpg" />
     </picture>
     <figcaption>
 The famous Hello Kitty edition GameTank, at its home of HackManhattan.
@@ -56,7 +56,12 @@ To its side are a number of GameTank cartriges, including the final AVHG cartrid
 
 Another feature added to increase replayability was the secret system. If you want to go in to AVHG totally blind I might recommend skipping this paragraph! Each level has a "secret" hidden in a relatively difficult to access location. These are invisible but play a noise and change the color of the goal when passed over. Players who collect each level's secret receive a special message at the end of the game and have their score entered on a secret score table. This was developed as an economic way to increase the depth of the game and allow players who no longer struggle with the base game to have a sort of hard mode. Secrets can also help to recontextualize levels. I'm especially proud of how level two's secret reconextualizes much of the level.
 
-__? diagram of level 2 maybe?__
+<figure>
+    <img src="/images/level_two_path.png" />
+    <figcaption>
+    Level two with the path required to collect the secret drawn. The path is in red and the location of the secret is in cyan. The player is forced to navigate the level in counterclockwise loop, so the secret forces them to pass over the level's goal. Without the secret the entire bottom half of the level would be extraneous.
+    </figcaption>
+</figure>
 
 A major failing of the level design is the difficulty of level one. Many players bounced off the game after struggling repeatedly on this level. I think that level one is a fair bit more difficult than level two, but I didn't want to swap the levels for a few reasons. Level one teaches more of the core skills required to beat the game, whereas level two basically only teaches velocity control. I often say that if you can clear level one, you can beat the rest of the game, and I believe this. Level one is also fairly similar in theme to level three, so I would like to separate them to keep the gameplay feeling fresh. I would like to add an easier level to the game before level one so that players can better acquaint themselves with the basic controls of the character. I did make the menu a level but it doesn't offer much challenge at all or offer enough freedom of movement.
 
@@ -144,7 +149,7 @@ const char level_three_name[] = "Level 3";
 which corresponds to the following level
 
 <figure>
-    <img class="bordered" src="/images/level_three_normal.png" />
+    <img src="/images/level_three_normal.png" />
     <figcaption>Level three rendered</figcaption>
 </figure>
 
@@ -273,7 +278,7 @@ A lot of thought went into reducing the amount I needed to render on every frame
 The decor sits on top of the zeroes outside the arena and adds a nice trim to the level. Notice how much less finished level three looks without the decor.
 
 <figure>
-    <img class="bordered" src="/images/level_three_sans_decor.png" />
+    <img src="/images/level_three_sans_decor.png" />
     <figcaption>Level three rendered without "decor"</figcaption>
 </figure>
 
@@ -299,7 +304,7 @@ for (i = 1; i <= tilemap_decor[0];) {
 ```
 
 <figure>
-    <img class="bordered" src="/images/level_three_outlined_decor.png" />
+    <img src="/images/level_three_outlined_decor.png" />
     <figcaption>Level three rendered with different decor boxes outlined in different colors</figcaption>
 </figure>
 
@@ -308,7 +313,7 @@ It would not be particularly difficult to generate the decor values given a tile
 With all of that considered, the only area outside the main playfield that needs to update during normal gameplay is the fail count (technically I also repaint the word "Fails" for code simplicity), which is updated the two frames following a player hitting an enemy. As such the amount of redraw needed on any given frame looks like this:
 
 <figure>
-    <img class="bordered" src="/images/level_three_redraw.png" />
+    <img src="/images/level_three_redraw.png" />
     <figcaption>Level three rendered with areas highlighted corresponding to how often they need to be redrawn. Red highlighted regions are redrawn every update. Blue highlighted regions are redrawn after a player fails. Areas not highlighted are only redrawn when a level is first loaded.</figcaption>
 </figure>
 
@@ -468,7 +473,15 @@ AVHG felt much more at home at LIRetro. It was part of a larger GameTank booth, 
 
 I had a great time at both of these events, and would love to go to more similar events in the future!
 
-__? picture of high scores after LIRetro or picture of LIRetro GameTank booth__
+<figure>
+    <picture>
+	<source srcset="/images/liretro.heic" type="image/heic" />
+	<img src="/images/liretro.jpg" />
+    </picture>
+    <figcaption>
+    The GameTank Booth at LIRetro, featuring [Burdock](https://dwbrite.com) in front of the AVHG setup.
+    </figcaption>
+</figure>
 
 Selling the game
 ----------------

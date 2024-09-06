@@ -406,7 +406,10 @@ Debugging and Tooling
 
 Debugging issues was probably the most difficult aspect of developing for the GameTank. Forget `gdb`, even `printf` debugging is off the table. If your building a game for the GameTank, you'll probably be running it in the [GameTank Emulator](https://github.com/clydeshaffer/GameTankEmulator). The GameTank Emulator is fairly functional for running games, but leaves a bit to be desired in terms of terms of debugging. When I started working on AVHG, the GameTank Emulator's code stepper didn't make use of labels or format instructions well.
 
-__? before after shot of the disassembler__
+<figure>
+    <img src="/images/stepper_before_and_after.png" />
+    <figcaption>A before and after image of the debugger's code stepper. Notice the label names on the jump instructions.</figcaption>
+</figure>
 
 Improving the emulator was a nice diversion, and improving the tool wasn't particularly difficult. I'm glad that things will be slightly nicer for future gamedevs. If you'd like to dip your feet into emulator development, contributing to the GameTank Emulator could be a good place to start. Most of my earlier contributions were UI related. All of the UI for the GameTank Emulator is implemented with [Dear Imgui](https://github.com/ocornut/imgui), which I hadn't used before but found very easy to work in. There are a few larger features which are currently planned but not yet implemented such as save states and TAS replay functionality as well.
 

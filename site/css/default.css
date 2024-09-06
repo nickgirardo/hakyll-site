@@ -205,12 +205,12 @@ figure video,
 figure img {
     display: block;
     margin: 0 auto;
-    width: min(512px, 80vh);
+    width: min(768, 80vw, 60vh);
 }
 
 figure video.bordered,
 figure img.bordered {
-    border: 4px solid black;
+    border: 6px solid black;
 }
 
 figure figcaption {

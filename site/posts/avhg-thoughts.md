@@ -46,28 +46,27 @@ While I didn't want to have too much distracting from the core gameplay, there w
 <figure>
     <picture>
 	<source srcset="/images/hello_kitty.avif" type="image/avif" />
-	<img src="/images/hello_kitty.jpg" />
+	<img alt="The famous Hello Kitty edition GameTank, at its home of HackManhattan. To its side are a number of GameTank cartriges, including the final AVHG cartridge and one from earlier in development" src="/images/hello_kitty.jpg" />
     </picture>
     <figcaption>
-The famous Hello Kitty edition GameTank, at its home of HackManhattan.
-To its side are a number of GameTank cartriges, including the final AVHG cartridge and one from earlier in development.
+The famous Hello Kitty edition GameTank, at its home of HackManhattan. To its side are a number of GameTank cartriges, including the final AVHG cartridge and one from earlier in development
     </figcaption>
 </figure>
 
 Another feature added to increase replayability was the secret system. If you want to go in to AVHG totally blind I might recommend skipping this paragraph! Each level has a "secret" hidden in a relatively difficult to access location. These are invisible but play a noise and change the color of the goal when passed over. Players who collect each level's secret receive a special message at the end of the game and have their score entered on a secret score table. This was developed as an economic way to increase the depth of the game and allow players who no longer struggle with the base game to have a sort of hard mode. Secrets can also help to recontextualize levels. I'm especially proud of how level two's secret reconextualizes much of the level.
 
 <figure>
-    <img src="/images/level_two_path.png" />
+    <img alt="Level two with the path required to collect the secret drawn. The player is forced to navigate the level in counterclockwise loop, so the secret forces them to pass over the level's goal. Without the secret the entire bottom half of the level would be extraneous" src="/images/level_two_path.png" />
     <figcaption>
-    Level two with the path required to collect the secret drawn. The path is in red and the location of the secret is in cyan. The player is forced to navigate the level in counterclockwise loop, so the secret forces them to pass over the level's goal. Without the secret the entire bottom half of the level would be extraneous.
+    Level two with the path required to collect the secret drawn. The path is in red and the location of the secret is in cyan. The player is forced to navigate the level in counterclockwise loop, so the secret forces them to pass over the level's goal. Without the secret the entire bottom half of the level would be extraneous
     </figcaption>
 </figure>
 
 A major failing of the level design is the difficulty of level one. Many players bounced off the game after struggling repeatedly on this level. I think that level one is a fair bit more difficult than level two, but I didn't want to swap the levels for a few reasons. Level one teaches more of the core skills required to beat the game, whereas level two basically only teaches velocity control. I often say that if you can clear level one, you can beat the rest of the game, and I believe this. Level one is also fairly similar in theme to level three, so I would like to separate them to keep the gameplay feeling fresh. I would like to add an easier level to the game before level one so that players can better acquaint themselves with the basic controls of the character. I did make the menu a level but it doesn't offer much challenge at all or offer enough freedom of movement.
 
 <figure>
-    <video class="bordered" autoplay loop src="/images/menu_level.mp4" />
-    <figcaption>Menu level</figcaption>
+    <video aria-describedby="menu_level_desc" class="bordered" autoplay loop tabindex="-1" src="/images/menu_level.mp4" />
+    <figcaption id="menu_level_desc">The menu level. Once the player elects to start the game the player is spawned</figcaption>
 </figure>
 
 General programming
@@ -84,13 +83,17 @@ I targetted 60 frames per second with AVHG. Once I understood how to best render
 
 One technique I made fairly heavy use of was "batching" enemies. For instance, in the image below the eight enemies (in blue) are represented as two groups of four enemies each. For the rest of this piece I'll describe the batched groups of enemies as entities (these are not the same as entities in an ECS sense!). This makes rendering, collision detection, and updating the enemies much faster. They also take up much less RAM, although RAM was never a major bottleneck.
 
-__? Image level one__
+<figure>
+    <img alt="Level one rendered" src="/images/level_one.png" />
+    <figcaption>Level one rendered</figcaption>
+</figure>
+
 
 In level two, the 24 enemies which circle the level are actually four distinct entities each comprised of six enemies. They move in one direction and "teleport" back to the start of their track when they finish moving across it. I've given each entity bellow a distinct color to make it easy to visualize the different groups.
 
 <figure>
-    <video class="bordered" autoplay loop src="/images/level_two_weird_colors.mp4" />
-    <figcaption>Level two with enemies that alternate between normal colors and distinct colors for each entity.</figcaption>
+    <video aria-describedby="level_two_weird_colors_desc" class="bordered" autoplay loop tabindex="-1" src="/images/level_two_weird_colors.mp4" />
+    <figcaption id="level_two_weird_colors_desc">Level two with enemies that alternate between normal colors and distinct colors for each entity.</figcaption>
 </figure>
 
 Level format
@@ -149,7 +152,7 @@ const char level_three_name[] = "Level 3";
 which corresponds to the following level
 
 <figure>
-    <img src="/images/level_three_normal.png" />
+    <img alt="Level three rendered" src="/images/level_three_normal.png" />
     <figcaption>Level three rendered</figcaption>
 </figure>
 
@@ -162,7 +165,7 @@ I definitely think that creating a script to generate levels from some other for
 A note on rendering functions
 -----------------------------
 
-In [`gt/drawing_funcs.c`](https://github.com/clydeshaffer/gametank_sdk/blob/main/src/gt/drawing_funcs.c) there are a number of helpful drawing functions such as `draw_box`.
+In `gt/drawing_funcs.c` there are a number of helpful drawing functions such as `draw_box`.
 
 ```c
 void draw_box(unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char c) {
@@ -278,7 +281,7 @@ A lot of thought went into reducing the amount I needed to render on every frame
 The decor sits on top of the zeroes outside the arena and adds a nice trim to the level. Notice how much less finished level three looks without the decor.
 
 <figure>
-    <img src="/images/level_three_sans_decor.png" />
+    <img alt="Level three rendered without decor" src="/images/level_three_sans_decor.png" />
     <figcaption>Level three rendered without "decor"</figcaption>
 </figure>
 
@@ -304,7 +307,7 @@ for (i = 1; i <= tilemap_decor[0];) {
 ```
 
 <figure>
-    <img src="/images/level_three_outlined_decor.png" />
+    <img alt="Level three rendered with different decor boxes outlined in different colors" src="/images/level_three_outlined_decor.png" />
     <figcaption>Level three rendered with different decor boxes outlined in different colors</figcaption>
 </figure>
 
@@ -313,7 +316,7 @@ It would not be particularly difficult to generate the decor values given a tile
 With all of that considered, the only area outside the main playfield that needs to update during normal gameplay is the fail count (technically I also repaint the word "Fails" for code simplicity), which is updated the two frames following a player hitting an enemy. As such the amount of redraw needed on any given frame looks like this:
 
 <figure>
-    <img src="/images/level_three_redraw.png" />
+    <img alt="Level three rendered with areas highlighted corresponding to how often they need to be redrawn" src="/images/level_three_redraw.png" />
     <figcaption>Level three rendered with areas highlighted corresponding to how often they need to be redrawn. Red highlighted regions are redrawn every update. Blue highlighted regions are redrawn after a player fails. Areas not highlighted are only redrawn when a level is first loaded.</figcaption>
 </figure>
 
@@ -401,7 +404,7 @@ There's also a channel on the GameTank discord for sharing sound effects, aptly 
 I've put a fair amount of effort into ensuring that the data is relatively compressed to ensure that URLs don't get too long. If you're interested, please check out the [encoder](https://github.com/nickgirardo/gt-sound-sculptor/blob/main/src/encode.ts) and the [decoder](https://github.com/nickgirardo/gt-sound-sculptor/blob/main/src/decode.ts). There are a few minor features I'd like to add to the Sound Sculptor, but it serves its purposes for now.
 
 <figure>
-    <img src="/images/sound_sculptor.png" />
+    <img alt="An image of Sound Sculptor focusing on the third and fourth operators" src="/images/sound_sculptor.png" />
     <figcaption>An image of Sound Sculptor focusing on the third and fourth operators</figcaption>
 </figure>
 
@@ -412,8 +415,8 @@ Debugging and Tooling
 Debugging issues was probably the most difficult aspect of developing for the GameTank. Forget `gdb`, even `printf` debugging is off the table. If your building a game for the GameTank, you'll probably be running it in the [GameTank Emulator](https://github.com/clydeshaffer/GameTankEmulator). The GameTank Emulator is fairly functional for running games, but leaves a bit to be desired in terms of terms of debugging. When I started working on AVHG, the GameTank Emulator's code stepper didn't make use of labels or format instructions well.
 
 <figure>
-    <img src="/images/stepper_before_and_after.png" />
-    <figcaption>A before and after image of the debugger's code stepper. Notice the label names on the jump instructions.</figcaption>
+    <img alt="A before and after image of the debugger's code stepper. Notice the label names on the jump instructions" src="/images/stepper_before_and_after.png" />
+    <figcaption>A before and after image of the debugger's code stepper. Notice the label names on the jump instructions</figcaption>
 </figure>
 
 Improving the emulator was a nice diversion, and improving the tool wasn't particularly difficult. I'm glad that things will be slightly nicer for future gamedevs. If you'd like to dip your feet into emulator development, contributing to the GameTank Emulator could be a good place to start. Most of my earlier contributions were UI related. All of the UI for the GameTank Emulator is implemented with [Dear Imgui](https://github.com/ocornut/imgui), which I hadn't used before but found very easy to work in. There are a few larger features which are currently planned but not yet implemented such as save states and TAS replay functionality as well.
@@ -476,10 +479,10 @@ I had a great time at both of these events, and would love to go to more similar
 <figure>
     <picture>
 	<source srcset="/images/liretro.heic" type="image/heic" />
-	<img src="/images/liretro.jpg" />
+	<img alt="The GameTank Booth at LIRetro, featuring Burdock in front of the AVHG setup" src="/images/liretro.jpg" />
     </picture>
     <figcaption>
-    The GameTank Booth at LIRetro, featuring [Burdock](https://dwbrite.com) in front of the AVHG setup.
+    The GameTank Booth at LIRetro, featuring [Burdock](https://dwbrite.com) in front of the AVHG setup
     </figcaption>
 </figure>
 
@@ -509,6 +512,6 @@ Is developing a game for the GameTank a project you should undertake? While I ca
 [Source](https://github.com/nickgirardo/gt-a-very-hard-game)
 
 <figure>
-    <img src="/images/ty4reading.png" />
+    <img alt="Thanks for reading!" src="/images/ty4reading.png" />
     <figcaption>Thanks!</figcaption>
 </figure>

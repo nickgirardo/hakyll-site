@@ -102,7 +102,7 @@
           buildPhase = ''
                 runHook preBuildPhase
 
-                export LAST_UPDATED="2024-06-02"
+                export LAST_UPDATED="2024-09-06"
 
                 cd site/
                 ${hakyll-site}/bin/site build --verbose

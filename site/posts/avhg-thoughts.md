@@ -1,5 +1,7 @@
 ---
 title: Making a game for my friend's retro console
+date: 2024-09-06
+description: A story with design, technical, and emotional details about making "A Very Hard Game" for the GameTank, a retro-inspired 8-bit console.
 ---
 
 Making a game for my friend's retro console

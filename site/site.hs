@@ -10,7 +10,7 @@ import System.Environment (lookupEnv)
 main :: IO ()
 main = do
     lastUpdated <- maybe "" ("last updated " <>) <$> (lookupEnv "LAST_UPDATED")
-    hakyll $ siteRules $ lastUpdatedCtx lastUpdated
+    hakyll $ siteRules $ (defaultContext <> lastUpdatedCtx lastUpdated)
 
 siteRules :: Context String -> Rules ()
 siteRules ctx = do
@@ -39,9 +39,22 @@ siteRules ctx = do
     -- Markdown posts
     match "posts/*.md" $ do
         route $ setExtension "html"
-	compile $
-	    pandocCompiler
-                >>= loadAndApplyTemplate "templates/default.html" ctx
+        compile $
+            pandocCompiler
+                >>= loadAndApplyTemplate "templates/post.html" (postCtx <> ctx)
+                >>= loadAndApplyTemplate "templates/default.html" (postCtx <> ctx)
+                >>= relativizeUrls
+
+    create ["posts.html"] $ do
+        route idRoute
+        compile $ do
+            posts <- recentFirst =<< loadAll "posts/*"
+            let postsCtx = constField "title" "Posts"
+                    <> listField "posts" (postCtx <> ctx) (pure posts)
+                    <> ctx
+            makeItem ""
+                >>= loadAndApplyTemplate "templates/post-list.html" postsCtx
+                >>= loadAndApplyTemplate "templates/default.html" postsCtx
                 >>= relativizeUrls
 
     -- Basic html files
@@ -56,4 +69,8 @@ siteRules ctx = do
 
 
 lastUpdatedCtx :: String -> Context String
-lastUpdatedCtx lastUpdated = defaultContext <> constField "lastUpdated" lastUpdated
+lastUpdatedCtx lastUpdated = constField "lastUpdated" lastUpdated
+
+postCtx :: Context String
+postCtx  =
+    dateField "date" "%B %e, %Y"

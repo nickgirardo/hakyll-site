@@ -15,7 +15,7 @@ You can check out some of my other projects [here](./projects.html).
 
 I've been wanting to write more about my experiences with computing and programming.
 My latest post is a recounting of my experiences developing ["A Very Hard Game"](/a-very-hard-game/index.html) for the [GameTank](https://gametank.zone/).
-You can read it [here](/post/avhg-thoughts.html).
+You can read it [here](/posts/avhg-thoughts.html).
 
 I serve as a member on the board of [HackManhattan](https://hackmanhattan.com/), Manhattans's Public Makerspace.
 HackManhattan is a non-profit, all-volunteer hackerspace.

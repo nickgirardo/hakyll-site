@@ -10,7 +10,7 @@ For more details on my past work, check out [my resume](./resume.pdf).
 You can also find more things I've done on [my GitHub](https://github.com/nickgirardo).
 
 My other technical interests include constraint systems, build systems, and embedded programming.
-This website uses Nix to fetch external dependecies and ensure reproduciblity.
+This website uses Nix to fetch external dependencies and ensure reproduciblity.
 You can check out some of my other projects [here](./projects.html).
 
 I've been wanting to write more about my experiences with computing and programming.

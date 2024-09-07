@@ -69,7 +69,8 @@ executable hakyll-site
     -- Other library packages from which modules are imported.
     build-depends:
         base ^>=4.17.2.1,
-        hakyll ^>=4.16.2.0
+        hakyll ^>=4.16.2.0,
+        MissingH ^>=1.6.0.1
 
     -- Directories containing source files.
     hs-source-dirs:   site

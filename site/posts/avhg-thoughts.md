@@ -214,7 +214,29 @@ void draw_box(unsigned char x, unsigned char y, unsigned char w, unsigned char h
 }
 ```
 
-While some of the guardrails in the function are nice, they're really overkill for a lot of purposes. The checks that it does at the start of the method are definitely not free on a microprocessor as old as the 6502. Queueing behavior might not be desired either. This method is fine to use for large blits (where the overhead less relative to the work done) or if you aren't using it in a hot codepath, but for things like rendering the tilemap we can do much better.
+While some of the guardrails in the function are nice, they're really overkill for a lot of purposes. The checks that it does at the start of the method are definitely not free on a microprocessor as old as the 6502. Queueing behavior might not be desired either. This method is fine to use for drawing larger boxes (where the overhead less relative to the work done) or if you aren't using it in a hot codepath, but for things like rendering the tilemap we can do much better.
+
+The actual drawing in the above function happens through the function call to `pushRect`. This function is implemented in 6502 assembly, but is relatively simple. It takes the values from `rect` and moves them into special memory addresses that control the blitter. The GameTank's blitter is special purpose hardware which can copy data from sprite RAM into video RAM at a rate of 1 byte per cycle. This is tremendously fast compared to copying data manually using the processor. In AVHG, I don't need to worry about the source as all of my draws are single color (except for rendering text).
+
+Although `draw_box` is far too slow for our purposes, there's a faster alternative called `draw_box_now`. `draw_box_now` eschews the checks and queueing to immediately write its arguments to the addresses which control the blitter and start the blit:
+
+```c
+void draw_box_now(char x, char y, char w, char h, char c) {
+    *dma_flags = flagsMirror | DMA_COLORFILL_ENABLE | DMA_OPAQUE;
+    vram[VX] = x;
+    vram[VY] = y;
+    vram[GX] = 0;
+    vram[GY] = 0;
+    vram[WIDTH] = w;
+    vram[HEIGHT] = h;
+    vram[COLOR] = ~c;
+    draw_busy = 1;
+    vram[START] = 1;
+    *dma_flags = flagsMirror;
+}
+```
+
+This is much, much faster than `draw_box` for doing a series of small draws, however we can do better still.
 
 When rendering the tilemap, we can use our knowledge of the problem to reduce the amount of work which needs to be done.  For instance, each tile is 8 pixels wide and 8 pixels tall. These values can be set once and then not updated. Only the color of the tile and its x position must be updated on each frame, with the y value being updated once each row. We also know exactly how many pixels we're copying (64) so we know how long the blitter will take (64 cycles as the blitter can copy one pixel per cycle). This means we don't necessarily need to use any sort of queueing mechanism.
 
@@ -272,7 +294,7 @@ do {
 
 Note that we set all of the unchanging blitter parameters once in `PREP_DRAW_TILE` (Note: GX and GY are for texturing so they aren't used here). For each tile in the tilemap, all we must do is update the x position, update the color, and occasionally update the y position. The `nop`s are the exact amount needed to wait for the blitter to finish its operation before starting the next.  Note that technically less `nop`s are required when we're setting the y position, but this would require more ROM space for very little performance.
 
-While this provides the largest performance benefit for rendering the tilemaps, it's used throughout the game. Since enemies are already batched, it's easy to render a significant number of enemies at once. Enemies which comprise an entity are always the same color and size and generally share either and x or y position.
+While this provides the largest performance benefit when rendering the tilemaps, it's used throughout the game. Since enemies are already batched, it's easy to render a significant number of enemies at once. Enemies which comprise an entity are always the same color and size and generally share either an x or y position.
 
 
 Reducing Redraw

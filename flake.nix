@@ -11,7 +11,7 @@
     ld48-42.url = "github:nickgirardo/ld48-42/ff194c48a9127712651b4c25e6bda3a8d91873e8";
     grid-tetris.url = "github:nickgirardo/grid-tetris/9547afb3eecaf939bbb93685a48c583238cf5367";
     avhg.url = "github:nickgirardo/gt-a-very-hard-game/a7743704e5a15d57748b347b0d46609a8ca46d3d";
-    sound-sculptor.url = "github:nickgirardo/gt-sound-sculptor/d74afd3868add5ff17bc57fbcb0c360f01717b06";
+    sound-sculptor.url = "github:nickgirardo/gt-sound-sculptor/c75e059fc2e352734666011abfa2567dc1c21a42";
   };
 
 

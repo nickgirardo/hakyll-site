@@ -67,7 +67,7 @@ Another feature added to increase replayability was the secret system. If you wa
 A major failing of the level design is the difficulty of level one. Many players bounced off the game after struggling repeatedly on this level. I think that level one is a fair bit more difficult than level two, but I didn't want to swap the levels for a few reasons. Level one teaches more of the core skills required to beat the game, whereas level two basically only teaches velocity control. I often say that if you can clear level one, you can beat the rest of the game, and I believe this. Level one is also fairly similar in theme to level three, so I would like to separate them to keep the gameplay feeling fresh. I would like to add an easier level to the game before level one so that players can better acquaint themselves with the basic controls of the character. I did make the menu a level but it doesn't offer much challenge at all or offer enough freedom of movement.
 
 <figure>
-    <video aria-describedby="menu_level_desc" class="bordered" muted autoplay loop tabindex="-1" src="/images/menu_level.mp4" />
+    <video aria-describedby="menu_level_desc" playsinline playsinline class="bordered" muted autoplay loop tabindex="-1" src="/images/menu_level.mp4" />
     <figcaption id="menu_level_desc">The menu level. Once the player elects to start the game the player is spawned</figcaption>
 </figure>
 
@@ -94,7 +94,7 @@ One technique I made fairly heavy use of was "batching" enemies. For instance, i
 In level two, the 24 enemies which circle the level are actually four distinct entities each comprised of six enemies. They move in one direction and "teleport" back to the start of their track when they finish moving across it. I've given each entity bellow a distinct color to make it easy to visualize the different groups.
 
 <figure>
-    <video aria-describedby="level_two_weird_colors_desc" class="bordered" muted autoplay loop tabindex="-1" src="/images/level_two_weird_colors.mp4" />
+    <video aria-describedby="level_two_weird_colors_desc" playsinline class="bordered" muted autoplay loop tabindex="-1" src="/images/level_two_weird_colors.mp4" />
     <figcaption id="level_two_weird_colors_desc">Level two with enemies that alternate between normal colors and distinct colors for each entity.</figcaption>
 </figure>
 

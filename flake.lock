@@ -1062,17 +1062,17 @@
         "nixpkgs": "nixpkgs_9"
       },
       "locked": {
-        "lastModified": 1726634701,
-        "narHash": "sha256-qhe+3o+MDIOMGl7mOdM6RW9PVyNXTi54T+HnhSHg8d4=",
+        "lastModified": 1741124294,
+        "narHash": "sha256-4uti6W6aSa6H/UQs6XaUJpYWPZtrSzR/b/arVme2t6Y=",
         "owner": "nickgirardo",
         "repo": "gt-sound-sculptor",
-        "rev": "c75e059fc2e352734666011abfa2567dc1c21a42",
+        "rev": "16dc8d9ac4ce8b6be7de4845f7d0ef2b8f427150",
         "type": "github"
       },
       "original": {
         "owner": "nickgirardo",
         "repo": "gt-sound-sculptor",
-        "rev": "c75e059fc2e352734666011abfa2567dc1c21a42",
+        "rev": "16dc8d9ac4ce8b6be7de4845f7d0ef2b8f427150",
         "type": "github"
       }
     },

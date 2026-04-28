@@ -3,6 +3,7 @@
 
 import Data.List ((\\))
 import Hakyll
+import Hakyll.Core.Dependencies (DependencyKind(..))
 import System.Environment (lookupEnv)
 import Data.Hash.MD5 (md5s, Str(..))
 
@@ -54,7 +55,7 @@ siteRules ctx = do
     -- Basic markdown files
     match (fromList ["index.md"]) $ do
         route $ setExtension "html"
-        styleDependencies <- makePatternDependency "css/*"
+        styleDependencies <- makePatternDependency KindContent "css/*"
         rulesExtraDependencies [styleDependencies] $ compile $
             pandocCompiler
                 >>= loadAndApplyTemplate "templates/default.html" ctxWithStyles

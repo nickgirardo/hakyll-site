@@ -48,7 +48,7 @@ siteRules ctx = do
         route $ customRoute ((\\ "extern/") . toFilePath)
         compile copyFileCompiler
 
-    match "images/*" $ do
+    match "images/**" $ do
         route idRoute
         compile copyFileCompiler
 

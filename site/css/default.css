@@ -2,16 +2,16 @@
   --color-main-bg: #fbf8f4;
   --color-text: #040d10;
   --color-text-soft: #555;
-  --color-link: #00e;
+  --color-link: #1e1ec5;
   --color-link-active: #1040f8;
   --color-code-bg: #ede9e4;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-main-bg: #191c26;
+    --color-main-bg: #171a21;
     --color-text: #e7edef;
-    --color-text-soft: #888;
+    --color-text-soft: #aaa;
     --color-link: #ce6922;
     --color-link-active: #e78640;
     --color-code-bg: #36383e;

@@ -22,7 +22,7 @@ siteRules ctx = do
     -- CSS Files
     -- These actually shouldn't be used by the frontend of the application at all but are here to ensure
     -- that they are available as dependencies for the stylesheet we build with a hash suffix
-    match "css/*" $ do
+    match "css/**" $ do
         route idRoute
         compile compressCssCompiler
 

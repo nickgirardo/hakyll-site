@@ -6,6 +6,7 @@ import Hakyll
 import Hakyll.Core.Dependencies (DependencyKind(..))
 import System.Environment (lookupEnv)
 import Data.Hash.MD5 (md5s, Str(..))
+import Control.Monad (filterM)
 
 --------------------------------------------------------------------------------
 
@@ -74,9 +75,15 @@ siteRules ctx = do
     create ["posts.html"] $ do
         route idRoute
         compile $ do
+            let isLive item = do
+                       metadata <- getMetadata (itemIdentifier item)
+                       pure $ lookupString "status" metadata /= Just "Draft"
+
             posts <- recentFirst =<< loadAll "posts/*"
+            livePosts <- filterM isLive posts
+
             let postsCtx = constField "title" "Posts"
-                    <> listField "posts" (postCtx <> ctxWithStyles) (pure posts)
+                    <> listField "posts" (postCtx <> ctxWithStyles) (pure livePosts)
                     <> ctxWithStyles
             makeItem ""
                 >>= loadAndApplyTemplate "templates/post-list.html" postsCtx

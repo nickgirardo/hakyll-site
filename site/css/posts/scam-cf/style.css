@@ -1,0 +1,48 @@
+.copy-button-container {
+    display: flex;
+    width: max-content;
+    margin: 0 auto;
+
+    & .label {
+        background: var(--color-green);
+        padding: 1rem;
+        border: 2px solid var(--color-text);
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+    }
+
+    & #evil-copy-button {
+        /* Clear button styles we aren't otherwise overwriting */
+        appearance: none;
+        font: inherit;
+        outline: inherit;
+
+        cursor: pointer;
+        color: var(--color-text);
+        text-decoration: underline;
+
+        padding: 1rem;
+        border: 2px solid var(--color-text);
+        border-left: 0;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+}
+
+.copy-bg-container {
+    display: flex;
+    width: max-content;
+    margin: 0 auto;
+
+    & .label {
+        background: var(--color-green);
+        padding: 1rem;
+        border: 2px solid var(--color-text);
+        border-radius: 1rem;
+    }
+
+    & .sneak {
+        color: var(--color-green);
+        font-size: 0.01px;
+    }
+}

@@ -5,6 +5,8 @@
   --color-link: #1e1ec5;
   --color-link-active: #1040f8;
   --color-code-bg: #ede9e4;
+
+  --color-green: #41e629;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,6 +17,8 @@
     --color-link: #ce6922;
     --color-link-active: #e78640;
     --color-code-bg: #36383e;
+
+    --color-green: #2c7f20;
   }
 }
 

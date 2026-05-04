@@ -14,7 +14,7 @@ While perusing the internet, I came across a very familiar looking page.
 
 <figure>
     <picture>
-	<img alt="A seemingly normal Cloudflare CAPTCHA" src="/images/posts/scam-cf/captcha.png" />
+	<img alt="A seemingly normal Cloudflare CAPTCHA" src="/images/posts/scam-cf/captcha.webp" />
     </picture>
     <figcaption>
 A seemingly normal Cloudflare CAPTCHA
@@ -27,7 +27,7 @@ Nothing immediately alerted me that this could potentially be a scam. It's very 
 
 <figure>
     <picture>
-	<img alt="An obviously malicious modal" src="/images/posts/scam-cf/modal.png" />
+	<img alt="An obviously malicious modal" src="/images/posts/scam-cf/modal.webp" />
     </picture>
     <figcaption>
 An obviously malicious modal
@@ -166,7 +166,7 @@ If you're convinced that a website is legitimate and trustworthy things are a bi
 
 <figure>
     <picture>
-	<img alt="The homepage of the Homebrew project featuring a button to copy a script" src="/images/posts/scam-cf/brew.png" />
+	<img alt="The homepage of the Homebrew project featuring a button to copy a script" src="/images/posts/scam-cf/brew.webp" />
     </picture>
     <figcaption>
 The homepage of the Homebrew project featuring a button to copy a script
@@ -354,7 +354,7 @@ I reported this page to Cloudflare using their [Abuse form](https://abuse.cloudf
 
 <figure>
     <picture>
-	<img alt="A 'Suspected Malware' warning from Cloudflare on the original domain" src="/images/posts/scam-cf/sus.png" />
+	<img alt="A 'Suspected Malware' warning from Cloudflare on the original domain" src="/images/posts/scam-cf/sus.webp" />
     </picture>
     <figcaption>
 A "Suspected Malware" warning from Cloudflare on the original domain

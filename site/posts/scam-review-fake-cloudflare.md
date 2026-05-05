@@ -1,7 +1,7 @@
 ---
 title: "Scam Review: Fake Cloudflare CAPTCHA"
-date: 2026-04-28
-description: TODO description
+date: 2026-05-11
+description: A examination and review of a page impersonating a Cloudflare CAPTCHA
 extraStyles: css/posts/scam-cf/style.css
 
 status: Draft
@@ -23,7 +23,7 @@ A seemingly normal Cloudflare CAPTCHA
 
 I've edited the page in the screenshot to change the domain name as I wouldn't want to direct more people to a malicious page. Throughout this post I will be replacing malicious domain names with [example.com](https://example.com/).
 
-Nothing immediately alerted me that this could potentially be a scam. It's very common (albeit annoying) to come across Cloudflare branded pages like this when perusing the internet. This wouldn't last long; upon clicking the verification checkbox I was presented with the following modal:
+Nothing immediately alerted me that this could potentially be a scam. It's very common (and very annoying) to come across Cloudflare branded pages like this when perusing the internet. This wouldn't last long; upon clicking the verification checkbox I was presented with the following modal:
 
 <figure>
     <picture>
@@ -144,9 +144,7 @@ Notice that the URL in this script is changed from the original. I did this to a
 
 This script feels a bit more interesting to me than the first. The majority of this script is inside a string `$nlbzhb` which is executed via `Start-Process` towards the end of the script.
 
-TODO I'm unsure why this is done rather than just executing the script normally
-
-Looking at the script inside `$nlbzhb`, a random file name inside a tmp directory is loaded into `$f`. The script then makes a few attempts to download a file from a URL (which once again is modified from the original). This URL takes `src` and `mode` query parameters, both of which are named cloudflare. This should let the server know to give us a malicious binary that works for (and is themed like) the fake Cloudflare CAPTCHA that we started with. In theory, the attacker could make multiple different styles of fake CAPTCHA for different providers with little added effort, although I've found no evidence of this actually being done. The script makes a few attempts at downloading the file, giving up if it is unable to do so. If it is successful at downloading the executable, it ends by executing it and attempting to cover its tracks by deleting it.
+Looking at the script inside `$nlbzhb`, a random file name inside a tmp directory is loaded into `$f`. The script then makes a few attempts to download a file from a URL (which I've modified to not point to a malicious file). This URL takes `src` and `mode` query parameters, both of which are named cloudflare. This should let the server know to give us a malicious binary that works for (and perhaps is themed like) the fake Cloudflare CAPTCHA that we started with. In theory, the attacker could make multiple different styles of fake CAPTCHA for different providers with little added effort, although I've found no evidence of this actually being done. The script makes a few attempts at downloading the file, giving up if it is unable to do so. If it is successful at downloading the executable, it ends by executing it and attempting to cover its tracks by deleting it.
 
 What does the executable in question actually do? I don't know. I didn't download or inspect the executable. I don't find it necessary to do so here because if the attacker can run arbitrary code the game is lost. At this point the attacker will have near complete control over the victim's system, so I don't consider the details of what they actually choose to do particularly important.
 
@@ -158,7 +156,7 @@ Do not execute code that is copied to your clipboard from a random website.
 
 What if a website is trustworthy?
 
-First, ask yourself if the website is really trustworthy. Until I clicked the checkbox and saw the modal pop up, I had thought I was using a real Cloudflare page. It is fairly trivial for even an unskilled web developer to make a page that is a convincing visual clone of another.
+First, ask yourself if the website is truly trustworthy. Until I clicked the checkbox and saw the modal pop up, I had thought I was using a real Cloudflare page. It is fairly trivial for even an unskilled web developer to make a page that is a convincing visual clone of another.
 
 Next, make sure that the website you are on is using HTTPS rather than insecure HTTP. A page served with insecure HTTP is subject to man-in-the-middle (MITM) attacks. The site may be legitimate, but its contents could be tampered with en route to your web browser. Today, most pages use HTTPS. There is little reason to continue using HTTP, but if a page does use HTTP make sure to interact with a heavy dose of concern. MITM attacks of this variety are vanishingly rare in practice, but be aware that insecure HTTP invites attackers into what should be secure and private communication.
 
@@ -194,7 +192,7 @@ There is absolutely nothing guaranteeing that the text next to a copy button is 
   </script>
 </div>
 
-From the perspective of a browser, nothing suspicious is taking place here. The clipboard api is being used exactly as designed. Aside from error checking and feedback that the copy succeded, this is roughly how any use of the clipboard looks.
+From the perspective of a browser, nothing suspicious is taking place here. The clipboard api is being used exactly as designed. Aside from error checking and feedback that the copy succeeded, this is roughly how any use of the clipboard looks.
 
 ```html
 <div class="copy-button-container">
@@ -214,7 +212,7 @@ In this case, the difference between the copied text and the expect text makes t
 
 Should browsers make some attempt to check if the copied message differs from the text signifying it? This could be a nice feature which might truly save some users from harm. The challenge would be in the execution. A naïve implementation would likely be vulnerable to a number of tricks. There are legitimate reasons for the copied text differing from the text it represents. For instance, GitHub displays the first 7 characters of a commit's SHA hash. The copy button next to it places the full SHA hash into a user's clipboard.
 
-One way to avoid this attack is to manually copy the string rather than depending on a copy button. This is not foolproof either. Consider what happens when trying to copy the string below:
+One way to avoid this attack is to manually copy the string rather than depending on a copy button. This is not foolproof either. Consider what happens when trying to copy the sentence below:
 
 <div class="copy-bg-container">
   <div class="label">Secret password<span class="sneak">SNEAK</span> required!</div>
@@ -286,11 +284,11 @@ Pros:
 Cons:
 
 - The scam jumps too quickly to make you copy code into your terminal. While it would be significantly more difficult to implement, it might have been more convincing if the victim was forced into an uncomfortable number of "spot the bridge" games first. I would have liked to see some messaging like "Special verification required" to convey that this is an unusual request
-- The payload starts with a block comment stating `<# I am not a robot - Cloudflare ID: 5c366723ff3328a3 #>`. I'm not sure what the purpose of this is, it feels like any victim spotting it might be confused.
+- The payload starts with a block comment stating `<# I am not a robot - Cloudflare ID: 5c366723ff3328a3 #>`. This may be intended to make a user that sees the script think it comes from Cloudflare, but it just confused me.
 - While this scam targets non-technically proficient victims, it is asking a lot of them to be able to open PowerShell/ Terminal as an administrator. Special instructions on how to open these applications in more detail may be warranted.
 - Encoding the payload as hex digits is quite wasteful.
 - The victim will need to accept a ridiculous amount of security pop-ups to allow the malicious code to actually run (if this unsigned code can run at all).
-- The scam is Windows specific. As a Linux user I felt left out of the fun :/
+- The scam is Windows specific. When I originally saw the "Powershell/ Terminal" in the instructions, I thought the payload was going to be a PowerShell/ bash polyglot. As a Linux user I felt left out of the fun :/
 
 Final rating: 2/5
 

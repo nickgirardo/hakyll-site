@@ -361,4 +361,4 @@ A "Suspected Malware" warning from Cloudflare on the original domain
 
 Humorously enough, it now has a legitimate Cloudflare CAPTCHA.
 
-Thanks to my friends Shahan Ankhter and Josh Romer for reading and recommending edits to drafts of this post.
+Thanks to my friends Shahan Akhter and Josh Romer for reading and recommending edits to drafts of this post.

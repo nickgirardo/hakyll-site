@@ -19,7 +19,6 @@
     let
       supportedSystems = [
         "x86_64-linux"
-        "x86_64-darwin"
         "aarch64-linux"
         "aarch64-darwin"
       ];
@@ -56,7 +55,7 @@
           #   https://github.com/MaxDaten/brutal-recipes/blob/source/default.nix#L24
           LANG = "en_US.UTF-8";
           LOCALE_ARCHIVE = pkgs.lib.optionalString
-            (pkgs.buildPlatform.libc == "glibc")
+            (pkgs.stdenv.buildPlatform.libc == "glibc")
             "${pkgs.glibcLocales}/lib/locale/locale-archive";
 
           resumePath = resume.outputs.packages.${system}.resume;

@@ -7,7 +7,7 @@
     flake-utils.url = "github:numtide/flake-utils";
     resume.url = "github:nickgirardo/resume/2e0701b3aad73d267c0a4ef80b161f792b0a94f5";
     trone.url = "github:nickgirardo/trone/fe21b76b83bad4604f582b4023cd3ea5ff715e32";
-    sudoku.url = "github:nickgirardo/sudoku/eb40b3464d884c2b64c340fc1052577c06916967";
+    sudoku.url = "github:nickgirardo/sudoku/b22690a0bae43d1f2a86cdd23ecaff8a86683a41";
     ld48-42.url = "github:nickgirardo/ld48-42/ff194c48a9127712651b4c25e6bda3a8d91873e8";
     grid-tetris.url = "github:nickgirardo/grid-tetris/9547afb3eecaf939bbb93685a48c583238cf5367";
     avhg.url = "github:nickgirardo/gt-a-very-hard-game/a7743704e5a15d57748b347b0d46609a8ca46d3d";
